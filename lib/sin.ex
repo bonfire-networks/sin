@@ -95,7 +95,7 @@ defmodule Sin do
   defp quot_impl(x, env) do
     code = {:quote, [], [[do: x]]}
     env = Macro.escape(env)
-    quote, do: Sin.unquot(Sin.read(unquote(code)), unquote(env))
+    quote do: Sin.unquot(Sin.read(unquote(code)), unquote(env))
   end  
 
   @doc "Like unquote, but for use in `quot/1`"
